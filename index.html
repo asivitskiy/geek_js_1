@@ -1,0 +1,108 @@
+<script>
+var a = 1, b = 1, c, d;
+c = ++a; alert("c = a + 1 --->  " + c);           // c = a + 1
+d = b++; alert("d = b --->  " + d);           // d = b, так как постфиксная.
+c = (2+ ++a); alert("c = 2 + a +  --->  " + c);      // c = 2 + a + 1 //а равно 2, т.к. в первой строке увеличено на 1
+d = (2+ b++); alert("d = 2 + b --->  " + d);      // d = 2 + b (б имеет значение 2, т.к. увеличено во второй строке)
+alert("а дваждый увеличено на 1 --->  " + a);                    // а дваждый увеличено на 1
+alert("b дваждый увеличено на 1 --->  " + b);                    // b дваждый увеличено на 1 (и уже не важно что посфиксной формой)
+</script>
+
+
+<script>
+var a = 2;
+var x = 1 + (a *= 2); //а = а*2 + 1 = 5
+console.log(x);
+</script>
+
+<script>
+    //третье задание
+    function randInt(min,max) {
+        var randomfloat = Math.random();
+        return(Math.round(min + (max-min)*randomfloat));
+    }
+    /*console.log(randInt(-15,15));*/
+    var a = randInt(-15,15);
+    var b = randInt(-15,15);
+    console.log("a=" + a);
+    console.log("b=" + b);
+
+    if ((a>=0) && (b>=0)) {
+        console.log(`Оба положительные, вывожу разность a-b=${a-b}`);
+    }
+    if ((a<0) & (b<0)) {
+        console.log(`Оба отрицательные, вывожу произведение a-b=${a*b}`);
+    }
+    if (a*b<0) {
+        console.log(`Разные знаки a+b=${a+b}`);
+    }
+
+
+    //четвертое задание
+    var p4 = randInt(0,15);
+
+    switch (p4) {
+        case 1: console.log(1);
+        case 2: console.log(2);
+        case 3: console.log(3);
+        case 4: console.log(4);
+        case 5: console.log(5);
+        case 6: console.log(6);
+        case 7: console.log(7);
+        case 8: console.log(8);
+        case 9: console.log(9);
+        case 10: console.log(10);
+        case 11: console.log(11);
+        case 12: console.log(12);
+        case 13: console.log(13);
+        case 14: console.log(14);
+        case 15: console.log(15);
+    }
+
+    function plus(dig1,dig2) {
+        return(dig1+dig2)
+    }
+    function minus(dig1,dig2) {
+        return(dig1-dig2)
+    }
+    function proizv(dig1,dig2) {
+        return(dig1*dig2)
+    }
+    function chast(dig1,dig2) {
+        return(dig1/dig2)
+    }
+
+    console.log(`Сумирование ${plus(1,3)}`);
+    console.log(`Вычитание ${minus(1,3)}`);
+    console.log(`Произведение ${proizv(1,3)}`);
+    console.log(`Деление ${chast(1,3)}`);
+
+//задание 6
+    function mathOpertion(arg1,arg2,operation) {
+        switch (operation) {
+            case "Сложение": return(plus(arg1,arg2));
+            case "Вычитание": return(minus(arg1,arg2));
+            case "Умножение": return(proizv(arg1,arg2));
+            case "Деление": return(chast(arg1,arg2));
+            default : return ("Где то закралась ошибочка");
+
+        }
+    }
+    console.log(mathOpertion(150,150,"Умножение"));
+
+//Задание 7 null >=0 //true, все иные false
+//просто особенности js. все операторы сравнения дают flase(ввиду различия типаов данных), кроме >=, т.к. он работает как обратный к <
+
+//задание 8
+    function power(val7,pow7) {
+        if (pow7>1) {
+            return val7*power(val7,pow7-1);
+        } else {
+            return (val7);
+        }
+
+    }
+    console.log(power(2,32));
+
+</script>
+
